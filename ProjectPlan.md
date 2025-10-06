@@ -8,7 +8,7 @@
 ## Project Goal
 To analyze drug-related deaths in Cook County to uncover spatial, demographic, and temporal trends, focusing on how the distribution of different drug types (opioids, fentanyl, cocaine, heroin, etc.) varies across time and location.  
 
-This project will use statistical modeling and visualization to highlight **emerging overdose patterns** and **public health implications**.
+This project will use data modeling and visualization to highlight emerging overdose patterns* and public health implications.
 
 ---
 
