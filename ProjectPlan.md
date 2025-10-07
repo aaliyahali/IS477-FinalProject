@@ -21,9 +21,9 @@ This project will use data modeling and visualization to highlight emerging over
 ---
 
 ## Data Sources
-- **Cook County Medical Examiner’s Office (Public Dataset)**  
-  - Variables: primary cause, secondary cause, date of death, race, gender, age, latitude/longitude, etc.  
-- **U.S. Census Bureau / Chicago Data Portal**  
+- **Cook County Medical Examiner’s Office (Public Dataset)**  (https://datacatalog.cookcountyil.gov/Health-Human-Services/Medical-Examiner-Case-Archive/cjeq-bs86/about_data)
+  - Variables: primary cause, secondary cause, date of death, race, gender, age, latitude/longitude, etc. 
+- **U.S. Census Bureau / Chicago Data Portal**  (https://hub-cookcountyil.opendata.arcgis.com/pages/boundary-open-data)
   - Provides a geographic context for spatial analysis, which includes spatial boundaries for Cook County.  
 
 ---
