@@ -25,7 +25,7 @@ This project will use data modeling and visualization to highlight emerging over
 - **Cook County Medical Examiner’s Office (Public Dataset)**  (https://datacatalog.cookcountyil.gov/Health-Human-Services/Medical-Examiner-Case-Archive/cjeq-bs86/about_data)
   -  Contains detailed information on deaths investigated by the Cook County Medical Examiner’s Office, including variables such as primary cause, secondary cause, date of death, age, race, gender, and geographic location (ZIP code, latitude/longitude).
 
-- **U.S. Census Bureau **  (https://data.census.gov/all?q=cook+county)
+- **U.S. Census Bureau**  (https://data.census.gov/all?q=cook+county)
   -   - Provides demographic and socioeconomic characteristics of Cook County census tracts, including race/ethnicity composition, income levels, education attainment, and population density. Additionally, the spatial boundaries of Cook County – which is necessary for mapping and visualizations – will also be provided through this data source. 
 
 
