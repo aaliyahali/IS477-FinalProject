@@ -38,32 +38,36 @@ Our goal is to produce interpretable, visually compelling results that could inf
 ---
 
 
-##  Planned Methods (as per class modules)
+## Planned Methods
+
 
 | Step | Description | Course Module Alignment | Lead |
 |------|--------------|-------------------------|------|
-| 1. Data Collection | Obtain and merge Cook County Medical Examiner and Census datasets. | **Module 1: Data Acquisition & Ethics** – Handling open data responsibly and documenting sources. | Both |
-| 2. Data Cleaning | Standardize drug names, correct typos, handle missing values, and format date/time variables. | **Module 2: Data Preprocessing & Wrangling** – Cleaning, transformation, and feature engineering. | Aaliyah |
-| 3. Feature Creation | Create binary indicators for drug types (fentanyl, heroin, cocaine, etc.) and demographic groups. | **Module 3: Feature Engineering** – Encoding, categorization, and creating interpretable variables. | Aaliyah |
-| 4. Exploratory Data Analysis (EDA) | Explore relationships between drug type, demographics, and location using plots and descriptive stats. | **Module 4: Exploratory Analysis** – Visualizing distributions and identifying trends/patterns. | Rithikka |
-| 5. Statistical & Predictive Modeling | Conduct logistic regression and association rule analysis to identify key predictors of opioid involvement. | **Module 5: Modeling & Machine Learning** – Applying appropriate statistical or ML models. | Both |
-| 6. Model Evaluation | Evaluate model accuracy and interpret coefficients to assess the reliability of findings. | **Module 6: Model Evaluation** – Using metrics like accuracy, AUC, and confusion matrices for validation. | Both |
-| 7. Visualization & Communication | Develop spatial heatmaps, demographic bar plots, and an interactive dashboard summarizing insights. | **Module 7: Data Visualization & Communication** – Turning results into visual stories. | Rithikka |
-| 8. Ethical Reflection | Reflect on the social and ethical implications of drug-related data use and misclassification risk. | **Module 8: Ethics & Interpretation** – Responsible reporting and contextual understanding. | Both |
-| 9. Final Presentation | Present findings, visualizations, and conclusions in a polished final report. | **Module 9: Professional Communication** – Presenting insights effectively to technical and nontechnical audiences. | Both |
+| **1. Data Collection & Ethics Review** | Obtain and merge datasets from the **Cook County Medical Examiner’s Office** and **U.S. Census Bureau** (tract-level demographics). Document data licenses and ethical considerations. | **Modules 1–3: Data Lifecycle, Ethical Data Handling, and Data Collection** – Understanding open data ethics, API access, and multi-source acquisition. | Both |
+| **2. Data Storage & Organization** | Organize raw and cleaned datasets into a reproducible folder structure (raw, processed, analysis). Ensure consistent file naming and metadata documentation. | **Modules 4–5: Data Storage & Organization** – File system structure, relational schema design, and naming conventions. | Aaliyah |
+| **3. Data Cleaning & Integration** | Standardize drug names, correct typos, handle missing values, and merge with demographic and geographic data using census tract codes. | **Modules 7 & 10: Data Integration and Cleaning** – Schema alignment, missing data handling, and text normalization. | Aaliyah |
+| **4. Feature Creation & Enrichment** | Create new columns for drug type indicators (fentanyl, heroin, cocaine, etc.), opioid involvement, and demographic categories (age bins, race groups). Add census features like income or education. | **Modules 6 & 8: Extraction and Enrichment, Feature Engineering** – Deriving new analytical variables. | Aaliyah |
+| **5. Exploratory Data & Spatial Analysis (EDA)** | Visualize distributions of drug-related deaths across demographics and census tracts using plots and spatial maps. Identify trends and potential hotspots. | **Modules 4 & 9: Exploratory Analysis and Data Quality** – Visual and statistical pattern exploration and data reliability checks. | Rithikka |
+| **6. Statistical Modeling & Pattern Analysis** | Perform logistic regression and association rule analysis to identify relationships between substances, demographics, and locations. | **Module 5: Modeling & Machine Learning** – Applying and interpreting regression or association models. | Both |
+| **7. Workflow Automation & Provenance** | Develop a reproducible Jupyter/Quarto workflow from raw data import to final visualization. | **Modules 11–12: Workflow Automation & Provenance** – Ensuring process traceability and automation. | Both |
+| **8. Visualization & Communication** | Create geographic heatmaps, demographic visualizations, and summary dashboards to communicate findings. | **Modules 7 & 13: Visualization and Reproducibility** – Transparent presentation and replicable visual analysis. | Rithikka |
+| **9. Ethical Reflection & Documentation** | Reflect on ethical implications such as privacy, representation, and potential bias. Document metadata, methods, and reproducibility details. | **Modules 2, 13 & 15: Ethics, Reproducibility, and Metadata** – Contextual and transparent reporting. | Both |
+| **10. Final Report & Presentation** | Compile findings, visualizations, and interpretations into a professional report and presentation. | **Module 9 & 15: Professional Communication & Documentation** – Presenting results effectively for technical and nontechnical audiences. | Both |
 
 ---
 
-##  Timeline (6 Weeks)
+## Timeline
 
 | Week | Task | Module Connection |
 |------|------|-------------------|
-| **1** | Collect and document datasets; review ethical data use. | Module 1 |
-| **2** | Clean data, standardize drug names, and handle missing values. | Module 2 |
-| **3** | Engineer features (drug type indicators, demographic bins); begin exploratory analysis. | Module 3–4 |
-| **4** | Perform regression and association analyses; interpret key predictors. | Module 5 |
-| **5** | Evaluate models, visualize results with maps and dashboards. | Module 6–7 |
-| **6** | Write up ethical reflection, finalize a report, and present findings. | Module 8–9 |
+| **Week 1** | Collect datasets (Cook County + Census), review ethical guidelines, and document licenses. | Modules 1–3 |
+| **Week 2** | Organize data directories, perform initial cleaning, and integrate datasets via census tract. | Modules 4–7 & 10 |
+| **Week 3** | Engineer features (drug categories, demographics), enrich data with census variables, and begin EDA. | Modules 6–8 |
+| **Week 4** | Conduct regression and association analyses to uncover spatial and demographic patterns. | Module 5 |
+| **Week 5** | Build spatial visualizations, automate workflow, and validate findings for reproducibility. | Modules 9, 11–12, 13 |
+| **Week 6** | Write ethical reflection, document metadata, and compile a notebook with reproducible analysis. | Modules 2, 13, 15 |
+
+
 
 ---
 ## Constraints and Gaps
@@ -76,8 +80,7 @@ In terms of gaps, our team has limited prior experience with spatial modeling. W
 
 
 ##  Tools
-- **Python:** pandas, geopandas, matplotlib, seaborn  
+- **Python:** pandas, geopandas, matplotlib, seaborn, plotly (interactive dashboard)  
 - **Jupyter Notebook:** reproducible analysis pipeline  
 - **GitHub:** for version control and collaborative development
-
 
