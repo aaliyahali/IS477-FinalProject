@@ -73,10 +73,3 @@ In terms of gaps, our team has limited prior experience with spatial modeling. W
 - **Python:** pandas, geopandas, matplotlib, seaborn  
 - **Jupyter Notebook:** reproducible analysis pipeline  
 
----
-
-## Expected Outputs
-- A cleaned, reproducible dataset for drug-related death analysis  
-- Visual dashboards showing spatial and demographic patterns  
-- Statistical summary of associations between drug types and outcomes  
-- Policy implications and recommendations for local health departments  
