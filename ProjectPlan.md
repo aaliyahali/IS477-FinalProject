@@ -6,10 +6,14 @@
 ---
 
 ## Project Goal
+
 This project aims to analyze drug-related deaths in Cook County to uncover spatial and demographic trends over time using open-source public health data. Specifically, we seek to understand how the distribution of key drug categories (e.g., fentanyl, heroin, cocaine, prescription opioids) varies across time, demographic groups, and geographic areas.
+
 Through data modeling, visualization, and integration of census tract–level demographics, our analysis will provide insight into socioeconomic-level factors associated with overdose risk and highlight emerging public health disparities across Cook County.
 This work is particularly important given the rising prevalence of synthetic opioids and polysubstance use in the region. By connecting the Cook County Medical Examiner’s data to demographic and socioeconomic indicators, we aim to build a picture of which communities face the highest burden and what social and/or structural factors may be driving these trends.
+
 Our goal is to produce interpretable, visually compelling results that could inform policymakers, public health officials, or community-based organizations seeking to develop more targeted overdose prevention strategies.
+
 ---
 
 ##  Research Questions
