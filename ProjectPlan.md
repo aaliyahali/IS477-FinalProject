@@ -6,10 +6,10 @@
 ---
 
 ## Project Goal
-To analyze drug-related deaths in Cook County to uncover spatial, demographic, and temporal trends. Specifically, our goal is to analyze how the distribution of different drug types (opioids, fentanyl, cocaine, heroin, etc.) varies across time and location.  
-
-This project will use data modeling and visualization to highlight emerging overdose patterns and public health implications.
-
+This project aims to analyze drug-related deaths in Cook County to uncover spatial and demographic trends over time using open-source public health data. Specifically, we seek to understand how the distribution of key drug categories (e.g., fentanyl, heroin, cocaine, prescription opioids) varies across time, demographic groups, and geographic areas.
+Through data modeling, visualization, and integration of census tract–level demographics, our analysis will provide insight into socioeconomic-level factors associated with overdose risk and highlight emerging public health disparities across Cook County.
+This work is particularly important given the rising prevalence of synthetic opioids and polysubstance use in the region. By connecting the Cook County Medical Examiner’s data to demographic and socioeconomic indicators, we aim to build a picture of which communities face the highest burden and what social and/or structural factors may be driving these trends.
+Our goal is to produce interpretable, visually compelling results that could inform policymakers, public health officials, or community-based organizations seeking to develop more targeted overdose prevention strategies.
 ---
 
 ##  Research Questions
@@ -24,10 +24,11 @@ This project will use data modeling and visualization to highlight emerging over
 ## Data Sources
 - **Cook County Medical Examiner’s Office (Public Dataset)**  (https://datacatalog.cookcountyil.gov/Health-Human-Services/Medical-Examiner-Case-Archive/cjeq-bs86/about_data)
   -  Contains detailed information on deaths investigated by the Cook County Medical Examiner’s Office, including variables such as primary cause, secondary cause, date of death, age, race, gender, and geographic location (ZIP code, latitude/longitude).
+-  Use: Identify and categorize drug-related deaths; analyze demographic and temporal trends
 
 - **U.S. Census Bureau**  (https://data.census.gov/all?q=cook+county)
-  -   - Provides demographic and socioeconomic characteristics of Cook County census tracts, including race/ethnicity composition, income levels, education attainment, and population density. Additionally, the spatial boundaries of Cook County – which is necessary for mapping and visualizations – will also be provided through this data source. 
-
+  -  Provides demographic and socioeconomic characteristics of Cook County census tracts, including race/ethnicity composition, income levels, education attainment, and population density. Additionally, the spatial boundaries of Cook County – which is necessary for mapping and visualizations – will also be provided through this data source. 
+- Use: Merge with Medical Examiner data to identify patterns between overdose rates and community-level characteristics
 
 ---
 
@@ -72,4 +73,6 @@ In terms of gaps, our team has limited prior experience with spatial modeling. W
 ##  Tools
 - **Python:** pandas, geopandas, matplotlib, seaborn  
 - **Jupyter Notebook:** reproducible analysis pipeline  
+- **GitHub:** for version control and collaborative development
+
 
