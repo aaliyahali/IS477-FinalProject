@@ -10,6 +10,7 @@
 This project aims to analyze drug-related deaths in Cook County to uncover spatial and demographic trends over time using open-source public health data. Specifically, we seek to understand how the distribution of key drug categories (e.g., fentanyl, heroin, cocaine, prescription opioids) varies across time, demographic groups, and geographic areas.
 
 Through data modeling, visualization, and integration of census tract–level demographics, our analysis will provide insight into socioeconomic-level factors associated with overdose risk and highlight emerging public health disparities across Cook County.
+
 This work is particularly important given the rising prevalence of synthetic opioids and polysubstance use in the region. By connecting the Cook County Medical Examiner’s data to demographic and socioeconomic indicators, we aim to build a picture of which communities face the highest burden and what social and/or structural factors may be driving these trends.
 
 Our goal is to produce interpretable, visually compelling results that could inform policymakers, public health officials, or community-based organizations seeking to develop more targeted overdose prevention strategies.
@@ -67,7 +68,7 @@ Our goal is to produce interpretable, visually compelling results that could inf
 ---
 ## Constraints and Gaps
 
-In terms of constraints, with the current shutdown of the Federal government, there may be delays in the updates to federally maintained data sources (such as the US Census data). As a result, certain datasets could have reduced accuracy or limited generalizability during this period. Also, integrating the location data with the Medical Examiner’s data may be challenging – or may have certain constraints – depending on what location data the Medical Examiner’s data lists (zip codes, lat/long) is the most available. 
+In terms of constraints, with the current shutdown of the Federal government, there may be delays in the updates to federally maintained data sources (such as the US Census data). As a result, certain datasets could have reduced accuracy or limited generalizability during this period. Also, integrating the location data with the Medical Examiner’s (ME) data may be challenging – or may have certain constraints – depending on what location data the ME’s data lists (zip codes, lat/long) is the most available. From a preliminary look at the ME’s data,some records may lack demographic or location data, which constrains the completeness of the analysis. Also, some toxicology results may not explicitly list all the detected substances – or may report compound analogs inconsistently – which can make it more challenging to distinguish between prescription, illicit, and synthetic variants of similar drugs.
 
 In terms of gaps, our team has limited prior experience with spatial modeling. We anticipate needing additional guidance in developing and interpreting geographic visualizations within Python to ensure that our mapping outputs are both accurate and meaningful.
 
