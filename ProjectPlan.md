@@ -1,4 +1,4 @@
-#  Mapping and Modeling Drug-Related Deaths in Cook County
+#  IS 477 Final Project: Mapping and Modeling Drug-Related Deaths in Cook County
 
 ## Team Members
 - **Aaliyah Ali**  and **Rithikka Souresh**
@@ -6,25 +6,28 @@
 ---
 
 ## Project Goal
-To analyze drug-related deaths in Cook County to uncover spatial, demographic, and temporal trends, focusing on how the distribution of different drug types (opioids, fentanyl, cocaine, heroin, etc.) varies across time and location.  
+To analyze drug-related deaths in Cook County to uncover spatial, demographic, and temporal trends. Specifically, our goal is to analyze how the distribution of different drug types (opioids, fentanyl, cocaine, heroin, etc.) varies across time and location.  
 
-This project will use data modeling and visualization to highlight emerging overdose patterns* and public health implications.
+This project will use data modeling and visualization to highlight emerging overdose patterns and public health implications.
 
 ---
 
 ##  Research Questions
-1. How have drug-related deaths changed over time in Cook County?  
-2. Which drug categories (fentanyl, heroin, cocaine, etc.) are most associated with fatal overdoses?  
-3. What demographic patterns (age, race, gender) exist across drug types?  
-4. Are there geographic hotspots for specific drug categories?  
+1. What spatial and demographic patterns emerge when comparing overdose rates across Cook County census tracts, and which demographic characteristics are most associated with higher fatality rates?
+2. How have drug-related deaths changed over time in Cook County?  
+3. Which drug categories (fentanyl, heroin, cocaine, etc.) are most associated with fatal overdoses?  
+4. What demographic patterns (age, race, gender) exist across drug types?  
+5. Are there geographic hotspots for specific drug categories? 
 
 ---
 
 ## Data Sources
 - **Cook County Medical Examiner’s Office (Public Dataset)**  (https://datacatalog.cookcountyil.gov/Health-Human-Services/Medical-Examiner-Case-Archive/cjeq-bs86/about_data)
-  - Variables: primary cause, secondary cause, date of death, race, gender, age, latitude/longitude, etc. 
-- **U.S. Census Bureau / Chicago Data Portal**  (https://hub-cookcountyil.opendata.arcgis.com/pages/boundary-open-data)
-  - Provides a geographic context for spatial analysis, which includes spatial boundaries for Cook County.  
+  -  Contains detailed information on deaths investigated by the Cook County Medical Examiner’s Office, including variables such as primary cause, secondary cause, date of death, age, race, gender, and geographic location (ZIP code, latitude/longitude).
+
+- **U.S. Census Bureau **  (https://data.census.gov/all?q=cook+county)
+  -   - Provides demographic and socioeconomic characteristics of Cook County census tracts, including race/ethnicity composition, income levels, education attainment, and population density. Additionally, the spatial boundaries of Cook County – which is necessary for mapping and visualizations – will also be provided through this data source. 
+
 
 ---
 
@@ -55,6 +58,13 @@ This project will use data modeling and visualization to highlight emerging over
 | **4** | Perform regression and association analyses; interpret key predictors. | Module 5 |
 | **5** | Evaluate models, visualize results with maps and dashboards. | Module 6–7 |
 | **6** | Write up ethical reflection, finalize a report, and present findings. | Module 8–9 |
+
+---
+## Constraints and Gaps
+
+In terms of constraints, with the current shutdown of the Federal government, there may be delays in the updates to federally maintained data sources (such as the US Census data). As a result, certain datasets could have reduced accuracy or limited generalizability during this period. Also, integrating the location data with the Medical Examiner’s data may be challenging – or may have certain constraints – depending on what location data the Medical Examiner’s data lists (zip codes, lat/long) is the most available. 
+
+In terms of gaps, our team has limited prior experience with spatial modeling. We anticipate needing additional guidance in developing and interpreting geographic visualizations within Python to ensure that our mapping outputs are both accurate and meaningful.
 
 ---
 
