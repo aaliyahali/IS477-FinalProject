@@ -11,7 +11,6 @@ import os
 df_me = pd.read_csv("data/raw/Medical_Examiner_Case_Archive_20251104.csv", low_memory=False)
 
 
-
 #dataset 2: census acs5 data for cook county
 
 os.makedirs("data/raw", exist_ok=True)
