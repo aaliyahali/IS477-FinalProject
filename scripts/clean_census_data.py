@@ -11,7 +11,7 @@ os.makedirs("data/processed", exist_ok=True)
 
 df = pd.read_csv("data/raw/census_tract_data.csv", low_memory=False)
 
-# Convert to numeric (some may be strings)
+# Convert to numeric (are strings right now)
 num_cols = [c for c in df.columns if c not in ["NAME", "STATE", "COUNTY", "TRACT", "TRACT_FIPS"]]
 df[num_cols] = df[num_cols].apply(pd.to_numeric, errors="coerce")
 
