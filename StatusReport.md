@@ -19,7 +19,7 @@ A description of any changes to your project plan itself, in particular about yo
 
 ## Contribution Summaries
 
-# Aaliyah Ali
+### Aaliyah Ali
 During this milestone, I led the **data acquisition, cleaning pipeline development, and initial integration steps** for the project. My contributions included:
 
 #### **Data Acquisition**
