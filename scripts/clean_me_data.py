@@ -11,13 +11,14 @@ from pathlib import Path
 RAW_ME_PATH = Path("data/raw/Medical_Examiner_Case_Archive_20251104.csv")
 df = pd.read_csv(RAW_ME_PATH, low_memory=False)
 
+df["Updated_Date_of_Death"] = pd.to_datetime(df['Date of Death'], format='%m/%d/%Y %I:%M:%S %p')
+df["Year_of_Death"] = df["Updated_Date_of_Death"].dt.year
+df = df[(df["Year_of_Death"] >= 2019) & (df["Year_of_Death"] <= 2023)]
+
+
 # Standardize ZIP code (keep 5 digits)
 df["Incident Zip Code"] = df["Incident Zip Code"].astype(str).str.extract(r"(\d{5})")
 df["Incident Zip Code"] = df["Incident Zip Code"].str.zfill(5)
-
-#missing demos
-df["Race"] = df["race"].fillna("Unknown")
-df["Gender"] = df["gender"].fillna("Unknown")
 
 # create columns for deaths related to drugs 
 fent_names = "FENTANYL| 4-ANILINO-N-PHENETHYLPIPERIDINE | 4-ANPP | Acetyl-alphamethyl-fentanyl | Alfentanil | Alpha-methylfentanyl | 4ANPP | 4FIBF | Alpha-methylthiofentanyl | Beta-hydroxyfentanyl | Beta-hydroxy-3 methylfentanyl | 3-methylfentanyl | 3-methylthio-fentanyl | Para-fluoro-fentanyl | Remifentanil | Sufentanil | Thiofentanyl | Carfentanil | 2-furanoylfentanyl | Furanylfentanyl | 4-anilino-N-phenethylpiperidine | 4-Fluorofentanyl | ACETYLFENTANYL | ACRYLFENTANYL | Butyrfentanyl | Lofentanil | Valerylfentanyl | Isobutyrylfentanyl"
