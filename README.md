@@ -16,13 +16,12 @@ IS477-FinalProject/
 │
 ├── notebooks/
 │   ├── checkpoint.ipynb
-│   ├── feature_engineering.ipynb
 │   ├── EDA.ipynb
 │   └── final_analysis.ipynb
 │
 ├── scripts/
 │   ├── acquire_data.py
-│   ├── clean_merge.py
+│   ├── clean_census_data.py
 │   ├── run_all.py
 │   └── workflow.smk      (for Snakemake)
 │
