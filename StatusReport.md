@@ -77,6 +77,6 @@ During this milestone, I led the **data acquisition, cleaning pipeline developme
 
 
 
-# Rithikka Souresh 
+## Rithikka Souresh 
 
 
