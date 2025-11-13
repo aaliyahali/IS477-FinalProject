@@ -4,8 +4,35 @@ import pandas as pd
 import requests
 import hashlib
 import os
-
 from pathlib import Path
+
+import pandas as pd
+from pathlib import Path
+import hashlib
+
+# --- Verify data integrity before cleaning ---
+def compute_sha256(file_path):
+    """Compute SHA-256 checksum for a file."""
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for byte_block in iter(lambda: f.read(4096), b""):
+            sha256_hash.update(byte_block)
+    return sha256_hash.hexdigest()
+
+def verify_checksum(file_path):
+    """Compare current file hash against stored checksum."""
+    expected = Path(file_path).with_suffix(".sha256").read_text().strip()
+    actual = compute_sha256(file_path)
+    if actual != expected:
+        raise ValueError(f"❌ Checksum mismatch for {file_path}")
+    print(f"✅ Verified checksum for {file_path}")
+
+# Verify integrity before loading raw ME data
+file_path = "data/raw/Medical_Examiner_Case_Archive_20251104.csv"
+verify_checksum(file_path)
+
+# ---- 
+
 
 
 RAW_ME_PATH = Path("data/raw/Medical_Examiner_Case_Archive_20251104.csv")

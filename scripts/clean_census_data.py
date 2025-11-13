@@ -2,7 +2,32 @@
 
 import pandas as pd
 import os
+from acquire_data import compute_sha256
+from pathlib import Path
 
+import pandas as pd
+from pathlib import Path
+import hashlib
+
+def compute_sha256(file_path):
+    """Compute SHA-256 checksum for a file."""
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for byte_block in iter(lambda: f.read(4096), b""):
+            sha256_hash.update(byte_block)
+    return sha256_hash.hexdigest()
+
+def verify_checksum(file_path):
+    """Compare current file hash against stored checksum."""
+    expected = Path(file_path).with_suffix(".sha256").read_text().strip()
+    actual = compute_sha256(file_path)
+    if actual != expected:
+        raise ValueError(f"❌ Checksum mismatch for {file_path}")
+    print(f"✅ Verified checksum for {file_path}")
+
+# Verify integrity before loading raw census data
+file_path = "data/raw/census_tract_data.csv"
+verify_checksum(file_path)
 
 
 # CLEAN CENSUS DATA
@@ -36,7 +61,7 @@ df["Pct_Unemployed"] = (df["Unemployed"] / df["LaborForce"]) * 100
 df["Pct_Uninsured"] = (df["NoHealthInsurance"] / df["TotalPop"]) * 100
 
 
-df.to_csv("data/processed/census_tract_cleaned.csv", index=False)
+df.to_csv("data/processed/census__cleaned.csv", index=False)
 print("Saved cleaned and enriched census dataset → data/processed/census_tract_cleaned.csv")
 
 

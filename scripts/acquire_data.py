@@ -3,8 +3,10 @@
 
 import pandas as pd
 import requests
-import hashlib
 import os
+
+import hashlib
+from pathlib import Path
 
 
 #dataset 1: me data from City of Chicago, download as CSV
@@ -93,3 +95,26 @@ df_census["TRACT_FIPS"] = df_census["STATE"] + df_census["COUNTY"] + df_census["
 
 df_census.to_csv("data/raw/census_tract_data.csv", index=False)
 print(f"Saved enriched Census data for {len(df_census)} tracts.")
+
+
+# ---- checksum 
+me_path = Path("data/raw/Medical_Examiner_Case_Archive_20251104.csv")
+census_path = Path("data/raw/census_tract_data.csv")
+
+def compute_sha256(file_path):
+    """Compute SHA-256 checksum for a file."""
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for byte_block in iter(lambda: f.read(4096), b""):
+            sha256_hash.update(byte_block)
+    return sha256_hash.hexdigest()
+
+raw_files = [me_path, census_path]
+
+for file in raw_files:
+    checksum = compute_sha256(file)
+    checksum_file = file.with_suffix(".sha256")
+    checksum_file.write_text(checksum)
+    print(f"🔐 SHA-256 for {file.name}: {checksum[:12]}... (saved to {checksum_file})")
+
+print("✔️ Data acquisition and integrity verification complete.")
