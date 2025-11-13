@@ -8,12 +8,90 @@
 ## Project Updates
 
 An update on each of the tasks described on your project plan including references to specific artifacts in your repository (such as datasets, scripts, workflows, workflow diagrams, etc).
+
+In terms of project updates: 
+
+1. Data Acquisition
+
+- Successfully obtained two datasets from distinct and trustworthy sources:
+  - Cook County Medical Examiner Case Archive (downloaded CSV) — contains all deaths investigated by the ME’s Office, including cause, demographics, and coordinates.
+  - U.S. Census Bureau (ACS 5-Year, 2023) — accessed programmatically via the Census API (scripts/acquire_data.py) to retrieve demographic, socioeconomic, and housing data at the tract level.
+
+- Implemented a standardized acquisition workflow with automated directory creation (data/raw) and integrity checks.
+  - Added variables relevant to overdose vulnerability, including income, poverty, race ethnicity, age structure, education, unemployment, uninsured rate, and median rent.
+
+Artifacts:
+- scripts/acquire_data.py
+- data/raw/Medical_Examiner_Case_Archive_20251104.csv
+- data/raw/census_tract_data.csv
+
+
+2. Data Cleaning & Standardization
+
+- Implemented cleaning scripts for both datasets to ensure consistency and readiness for merging, which includes standardized column names and formats. We also converted date/time and numeric fields and normalized ZIP codes and cause-of-death fields. Additionally, we added binary indicators for drug categories (fentanyl, heroin, cocaine, opioids). Also, we Created aggregated age group fields and percentage-based socioeconomic indicators for ease of analysis and even derived additional metrics (e.g., poverty %, unemployment %, uninsured %) for each census tract.
+
+- Artifacts:
+  - scripts/clean_me.py
+  - scripts/clean_census.py
+  - data/processed/me_clean.csv
+  - data/processed/census_clean.csv
+
+
+3. Data Integration
+
+- Downloaded and processed the HUD USPS ZIP → Census Tract Crosswalk to bridge ZIP codes (in ME data) and tracts (in Census data). In ther merging process, we merged the ME and Census datasets using the crosswalk. This prroduced a unified dataset for analysis (data/processed/merged_me_census.csv). We then preserved unmatched ZIPs and flagged missing Census linkage. Finally, we confirmedthat we  ~95% ZIP coverage within Cook County and aligned Census tracts for spatial analysis.
+
+Artifacts:
+  - data/raw/zip_to_tract_crosswalk.csv
+  - scripts/merge_datasets.py
+  - data/processed/merged_me_census.csv
+
 - 
 
-An updated timeline indicating the status of each task and when they will be completed.
+
+4. Exploratory Data Analysis (In Progress)
+
+Currently, we have conducted preliminary EDA in EDA.ipynb, which includes generating summary statistics for age, race, and drug type frequency, geographic distribution of overdose cases, missing value inspection and data completeness. We have also buily tract-level heatmaps with GeoPandas and done a correlation analysis between overdose frequency and Census-derived socioeconomic factors. Moving forward, we hope to provide temporal context to these spatial statistics by looking at these factors from 2018–2025.
+
+Artifacts:
+- EDA.ipynb
+- visualizations folder 
+
 - 
 
-A description of any changes to your project plan itself, in particular about your progress so far. Also include changes you made to your plan based on feedback you may have received for Milestone 2.
+## Updated Timeline
+
+| Task                                    | Original Target | Current Status | Expected Completion |
+| --------------------------------------- | --------------- | -------------- | ------------------- |
+| Data Collection & Ethics Review         | Week 1          | Completed    | Week 1              |
+| Data Storage & Organization             | Week 2          | Completed    | Week 2              |
+| Data Cleaning & Integration             | Week 2          | Completed    | Week 3              |
+| Feature Creation & Enrichment           | Week 3          | Comepleted | Week 4              |
+| Exploratory Data & Spatial Analysis     | Week 3–4        | STARTED     | Week 5              |
+| Statistical Modeling & Pattern Analysis | Week 4–5        | Pending      | Week 6              |
+| Workflow Automation & Provenance        | Week 5          | Planned      | Week 6              |
+| Visualization & Communication           | Week 5–6        | Pending      | Week 6              |
+| Ethical Reflection & Documentation      | Week 6          | Pending      | Week 6              |
+- 
+
+## Project Plan Changes + Next Steps 
+
+
+Project Plan Changes:
+
+  - Adjusted timeline: added one additional week for feature engineering due to complexity of drug-type categorization and spatial joins.
+  - Expanded Census variable scope to include unemployment, health insurance, and median rent to strengthen socioeconomic context.
+  - Introduced modular Python scripts for acquisition, cleaning, and merging to improve reproducibility and allow pipeline re-execution.
+  - Implemented relative pathing and organized directories to meet reproducibility requirements outlined in course guidelines.
+  - No significant scope changes to core research questions or analytical goals.
+
+  Next Steps:
+
+  - Complete Census-tract–level feature aggregation and drug-type rate calculations.
+  - Perform initial spatial analysis (choropleth maps, tract clustering).
+  - Begin model development for association or regression analysis on overdose rates.
+  - Document all pipeline steps for reproducibility and metadata submission.
+
 - 
 
 
@@ -25,8 +103,8 @@ During this milestone, I led the **data acquisition, cleaning pipeline developme
 #### **Data Acquisition**
 
 * Obtained the **Cook County Medical Examiner’s dataset** from the Cook County Public Data Portal and added it to the project’s `data/raw/` directory.
-* Implemented `scripts/acquire_data.py` to programmatically download **American Community Survey (ACS 2023 5-Year)** demographic and socioeconomic data for **Cook County Census Tracts** using the **U.S. Census API**.
-* Selected and included variables relevant to overdose vulnerability, including:
+* Implemented `scripts/acquire_data.py` to access the  **American Community Survey (ACS 2023 5-Year)** demographic using their API and the downloading the data for **Cook County Census Tracts**  from the US Census portal as and adding it to the project’s `data/raw/` directory.
+* Selected and included variables in the US Census data relevant to overdose vulnerability, including:
 
   * **Income**, **poverty**, **education**
   * **Age structure**
@@ -50,14 +128,14 @@ During this milestone, I led the **data acquisition, cleaning pipeline developme
   * Converting dates and numeric fields
   * Standardizing ZIP code formatting for geographic joins
   * Lowercasing and normalizing cause-of-death text fields
-  * Creating **drug involvement indicator variables** (fentanyl, heroin, cocaine, opioids)
+  * Creating **drug involvement indicator variables** (fentanyl, heroin, cocaine)
 
 ---
 
 #### **Data Integration Progress**
 
-* Downloaded and processed the **HUD USPS ZIP → Census Tract crosswalk**, saved as `data/raw/zip_to_tract_crosswalk.csv`.
-* Developed `scripts/merge_datasets.py` to merge the ME data and Census tract data through the ZIP → TRACT link, producing `data/processed/merged_me_census.csv`.
+* Downloaded and processed the **HUD USPS ZIP → Census Tract crosswalk**, saved as `data/raw/raw/ZIP_TRACT_062025.xlsx.csv`.
+* Developed `scripts/merge_data.py` to merge the ME data and Census tract data through the ZIP → TRACT link, producing `data/processed/me_census_data_merged.csv`.
 * Ensured that unmatched rows were retained and added a `has_census_data` flag to support spatial completeness evaluation.
 
 ---
