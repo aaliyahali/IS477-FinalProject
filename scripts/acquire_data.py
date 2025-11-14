@@ -97,9 +97,34 @@ df_census.to_csv("data/raw/census_tract_data.csv", index=False)
 print(f"Saved enriched Census data for {len(df_census)} tracts.")
 
 
-# ---- checksum 
+# # ---- checksum 
+# me_path = Path("data/raw/Medical_Examiner_Case_Archive_20251104.csv")
+# census_path = Path("data/raw/census_tract_data.csv")
+
+# def compute_sha256(file_path):
+#     """Compute SHA-256 checksum for a file."""
+#     sha256_hash = hashlib.sha256()
+#     with open(file_path, "rb") as f:
+#         for byte_block in iter(lambda: f.read(4096), b""):
+#             sha256_hash.update(byte_block)
+#     return sha256_hash.hexdigest()
+
+# raw_files = [me_path, census_path]
+
+# for file in raw_files:
+#     checksum = compute_sha256(file)
+#     checksum_file = file.with_suffix(".sha256")
+#     checksum_file.write_text(checksum)
+#     print(f"🔐 SHA-256 for {file.name}: {checksum[:12]}... (saved to {checksum_file})")
+
+# print("✔️ Data acquisition and integrity verification complete.")
+
 me_path = Path("data/raw/Medical_Examiner_Case_Archive_20251104.csv")
 census_path = Path("data/raw/census_tract_data.csv")
+
+# directory to store checksum files
+checksum_dir = Path("data/checksums")
+checksum_dir.mkdir(parents=True, exist_ok=True)
 
 def compute_sha256(file_path):
     """Compute SHA-256 checksum for a file."""
@@ -113,7 +138,10 @@ raw_files = [me_path, census_path]
 
 for file in raw_files:
     checksum = compute_sha256(file)
-    checksum_file = file.with_suffix(".sha256")
+
+    # always save checksum under data/checksums with same filename + .sha256
+    checksum_file = checksum_dir / f"{file.stem}.sha256"
+
     checksum_file.write_text(checksum)
     print(f"🔐 SHA-256 for {file.name}: {checksum[:12]}... (saved to {checksum_file})")
 
