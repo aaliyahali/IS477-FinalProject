@@ -1,5 +1,8 @@
 # IS477-FinalProject
 
+
+BAREBONES OUTLINEE ---- 
+
 Final project for IS477 by Aaliyah Ali and Rithikka Souresh.
 
 
