@@ -9,7 +9,25 @@
 
 An update on each of the tasks described on your project plan including references to specific artifacts in your repository (such as datasets, scripts, workflows, workflow diagrams, etc).
 
-In terms of project updates: 
+In terms of *project updates*: 
+
+### Storage and Organization.
+
+All project data and scripts follow a standardized and reproducible directory structure. Raw source files are stored under data/raw/ and are kept immutable to preserve provenance. Derived datasets produced during cleaning and transformation are stored separately in data/processed/ to maintain clear separation between original inputs and generated outputs. To support data integrity and reproducibility, each raw dataset has an associated SHA-256 checksum file stored in data/checksums/ using a consistent naming convention (<filename>.sha256). This ensures that the project can automatically verify that no raw data have been corrupted or altered over time.
+
+The project uses consistent file-naming conventions across all components:
+
+- Lowercase, snake_case naming for files and folders (medical_examiner_data.csv, clean_me.py)
+- semantic directory roles (raw, processed, checkpoints, scripts)
+- Mirrored names between files and their checksums (e.g., census_tract_data.csv ↔ census_tract_data.sha256)
+
+This organization supports the FAIR principles—particularly Findability (logical structure, predictable names), Accessibility (clear paths), and Reusability (versioning and integrity verification). The structure is also compatible with automated workflows (e.g., Snakemake), enabling future users or graders to reproduce results from raw data in a clean, transparent pipeline.
+
+### Workflow Automation Progress 
+
+To ensure full reproducibility and minimize manual intervention, the project will use Snakemake to automate the entire data pipeline—from acquisition to cleaning to analysis. Each major stage of the workflow is implemented as a separate Python script stored in the scripts/ directory (e.g., acquire_data.py, clean_me.py, merge_census.py, analyze.py). Snakemake rules will orchestrate these scripts by specifying their inputs, outputs, and execution commands. For example, raw datasets in data/raw/ will trigger the acquisition rule, which generates checksum files in data/checksums/; these validated inputs will then trigger the cleaning rule to produce standardized outputs in data/processed/. This workflow is still in progress and will be adapted as our project progresses, as mentioned in the timeline. 
+
+
 
 1. Data Acquisition
 
@@ -56,6 +74,7 @@ Currently, we have conducted preliminary EDA in EDA.ipynb, which includes genera
 Artifacts:
 - EDA.ipynb
 - visualizations folder 
+
 
 - 
 
