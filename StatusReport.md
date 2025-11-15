@@ -64,7 +64,6 @@ Artifacts:
   - scripts/merge_datasets.py
   - data/processed/merged_me_census.csv
 
-- 
 
 
 4. Exploratory Data Analysis (In Progress)
@@ -75,8 +74,6 @@ Artifacts:
 - EDA.ipynb
 - visualizations folder 
 
-
-- 
 
 ## Updated Timeline
 
@@ -111,7 +108,6 @@ Project Plan Changes:
   - Begin model development for association or regression analysis on overdose rates.
   - Document all pipeline steps for reproducibility and metadata submission.
 
-- 
 
 
 ## Contribution Summaries
@@ -185,8 +181,7 @@ During this milestone, I led the **exploratory data analysis (EDA), spatial visu
   * Missing value analysis with visual ranking of top 15 columns
   * Duplicate row detection
   * Mixed data type identification across columns
-* Corrected data quality issues, including fixing the `contanins_fentanyl` typo to `contains_fentanyl`
-* Generated descriptive statistics for all variables to establish baseline distributions
+
 
 ---
 
