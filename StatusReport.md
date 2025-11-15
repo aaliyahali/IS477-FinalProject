@@ -176,4 +176,67 @@ During this milestone, I led the **data acquisition, cleaning pipeline developme
 
 ## Rithikka Souresh 
 
+During this milestone, I led the **exploratory data analysis (EDA), spatial visualization, and pattern identification** for the project. My contributions included:
+
+#### **Data Quality Assessment & Validation**
+
+* Conducted comprehensive data quality checks on the merged dataset (`me_census_data_merged.csv`), including:
+  * Shape and structure validation (dimensions, data types)
+  * Missing value analysis with visual ranking of top 15 columns
+  * Duplicate row detection
+  * Mixed data type identification across columns
+* Corrected data quality issues, including fixing the `contanins_fentanyl` typo to `contains_fentanyl`
+* Generated descriptive statistics for all variables to establish baseline distributions
+
+---
+
+#### **Demographic & Temporal Analysis**
+
+* Analyzed **victim demographics** through visualizations:
+  * Gender distribution of drug-related deaths
+  * Racial breakdown of overdose victims
+  * Age distribution at time of death using histogram with KDE overlay
+* Created **temporal trend analysis** showing:
+  * Year-over-year changes in drug-related deaths (2019-2023)
+  * Time-series evolution of drug involvement rates for fentanyl, cocaine, and heroin
+  * Drug-specific prevalence trends over the five-year period
+
+---
+
+#### **Drug Involvement Pattern Analysis**
+
+* Calculated prevalence rates for each drug type (fentanyl, cocaine, heroin) across the full dataset
+* Developed **race-stratified drug involvement analysis**:
+  * Generated cross-tabulations of drug presence by racial group
+  * Created horizontal bar charts showing percentage of deaths involving each drug type by race
+  * Identified disparities in drug involvement patterns across demographic groups
+* Computed **tract-level fentanyl rates** and visualized their distribution to identify geographic hotspots
+
+---
+
+#### **Socioeconomic Correlation Analysis**
+
+* Selected seven key socioeconomic indicators for analysis:
+  * Median income, poverty rate, unemployment rate
+  * Educational attainment (bachelor's degree or higher)
+  * Racial composition (% Black, % Hispanic)
+  * Health insurance coverage (% uninsured)
+* Generated **correlation heatmap** between socioeconomic factors and fentanyl involvement
+* Identified potential vulnerability indicators for overdose risk
+
+---
+
+#### **Spatial Visualization & Mapping**
+
+* Created **point-based scatter plot** of all drug death locations in Cook County with:
+  * Color-coding by fentanyl involvement status
+  * Geographic coordinate filtering to ensure data quality
+* Developed **comparative spatial analysis** showing side-by-side distributions of:
+  * Fentanyl-involved deaths
+  * Cocaine-involved deaths
+  * Heroin-involved deaths
+* Built **interactive web map** (`chicago_drug_deaths_map.html`) using Folium featuring:
+  * Multi-layer heatmaps with distinct color gradients for each drug type
+  * Layer toggle controls for selective visualization
+ 
 
