@@ -18,15 +18,11 @@ IS477-FinalProject/
 │   └── metadata.txt
 │
 ├── notebooks/
-│   ├── checkpoint.ipynb
 │   ├── EDA.ipynb
-│   └── final_analysis.ipynb
 │
 ├── scripts/
 │   ├── acquire_data.py
 │   ├── clean_census_data.py
-│   ├── run_all.py
-│   └── workflow.smk      (for Snakemake)
 │
 ├── figures/
 │   ├── fentanyl_trends.png
