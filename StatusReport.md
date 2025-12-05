@@ -104,8 +104,6 @@ Project Plan Changes:
   Next Steps:
 
   - Complete Census-tract–level feature aggregation and drug-type rate calculations.
-  - Perform initial spatial analysis (choropleth maps, tract clustering).
-  - Begin model development for association or regression analysis on overdose rates.
   - Document all pipeline steps for reproducibility and metadata submission.
 
 
