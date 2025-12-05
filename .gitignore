@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Data from Box or large external files
+data/box/
+data/external/
+
+# Do not commit large local experiment files
+*.log
