@@ -1,0 +1,51 @@
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "Mapping and Modeling Drug-Related Deaths in Cook County",
+  "description": "A linked dataset combining Cook County Medical Examiner death records with tract-level demographic and socioeconomic indicators from the U.S. Census Bureau ACS 5-year estimates for Cook County, Illinois. The dataset is used to explore spatial and demographic patterns in drug-related deaths, with a focus on fentanyl, cocaine, and heroin involvement.",
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Aaliyah Ali"
+    },
+    {
+      "@type": "Person",
+      "name": "Rithikka Souresh"
+    }
+  ],
+  "keywords": [
+    "overdose",
+    "drug-related deaths",
+    "Cook County",
+    "fentanyl",
+    "opioids",
+    "public health",
+    "American Community Survey",
+    "census tracts",
+    "spatial epidemiology"
+  ],
+  "license": "https://opensource.org/licenses/MIT",
+  "isBasedOn": [
+    {
+      "@type": "Dataset",
+      "name": "Medical Examiner Case Archive",
+      "creator": "Cook County Medical Examiner's Office",
+      "url": "https://datacatalog.cookcountyil.gov/Health-Human-Services/Medical-Examiner-Case-Archive/cjeq-bs86"
+    },
+    {
+      "@type": "Dataset",
+      "name": "American Community Survey 5-Year Data (ACS 2023)",
+      "creator": "U.S. Census Bureau",
+      "url": "https://www.census.gov/data/developers/data-sets/acs-5year.html"
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://uofi.box.com/s/9a0jh7l2u5c8mr3zurk52l1l1ljn420u",
+      "name": "me_census_data_merged.csv"
+    }
+  ]
+}
