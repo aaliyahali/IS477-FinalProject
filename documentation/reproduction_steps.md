@@ -6,7 +6,6 @@ This document describes how to reproduce the complete analysis workflow from scr
 
 - Python 3.10+  
 - Git  
-- Internet access (for acquiring ACS data from the Census API)  
 
 ## Step 1: Clone the Repository
 
@@ -14,7 +13,6 @@ This document describes how to reproduce the complete analysis workflow from scr
 git clone <YOUR_REPO_URL>.git
 cd IS477-FinalProject
 ```
-
 
 ## Step 2: Set Up Environment
 
